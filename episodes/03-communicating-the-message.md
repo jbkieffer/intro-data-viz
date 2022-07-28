@@ -94,26 +94,28 @@ We need to pick our first data series. This will become our y-axis data. Lets pi
 
 ![Figure 3.8](fig/03-new_chart_coyote2.png){alt='new chart type coyote'}
 
-We can now specify the data for our x -axis. Lets start with the x-axis. Click on the field below the X-axis heading in the chart editor, and again this should open a menu with a search field on the right with a rectangular grid icon on the left. Once the Select data range menu is open. Now you can click the top of the Column named year in your table to set year as our x-axis. 
+We can now specify the data for our x -axis. Google sheets will not let you set the x-axis directly from your data table. This is likely a bug, but we can work around it by adding our x-axis data as a Series first. Click on the Add Series field below our Coyote entry under the Series heading. This should open a menu with a search field on the right with a rectangular grid icon on the left. Once the Select data range menu is open. Now you can click the top of the Column named year in your table to set year as our second data series. Now click on the x-axis field and you will see you have two options. The window may not automatically list our columns by name, just remember that our year data is in column F and select the appropriate entry (likely `F1:F4681`). Go ahead and click it to set you x-axis. You will need to remove year from the data series list by clicking the three dot icon next to it's Series entry and selecting remove.
 
-![Figure 3.9](fig/03-new_chart_year.png){alt='new chart type year'}
-
-Sometimes the chart editor will automatically set this as a data series instead of your x-axis. This is ok, if you click on the x-axis field again you will see year is now an option. Go ahead and click it to set you x-axis. You will need to remove year from the data series list by clicking the three dot icon and selecting remove.
-
-![Figure 3.10](fig/03-new_chart_year_remove.png){alt='new chart type year remove'}
+![Figure 3.9](fig/03-new_chart_year.png){alt='new chart type year remove'}
 
 Something doesn't look right. Our line chart seems to be jumping back and forth at each year. If you look at the table you will notice that for every year value we have multiple rows. By default the chart is plotting every row as an independent point, so we have multiple points at every year. Is that  really what we want to show? It might be better to show some aggregate value for each year. That would mean a simpler chart and a simpler message. Lets try plotting the average (arithmetic mean) counts of coyotes instead. Click the agregate checkbox and a new dropdown will appear. Select average to plot our mean counts.
 
-![Figure 3.11](fig/03-new_chart_average.png){alt='new chart type year remove'}
+![Figure 3.10](fig/03-new_chart_average.png){alt='new chart type year average'}
 
 That looks better, but can you see another issue? Look closely.
-![Figure 3.12](fig/03-new_chart_error.png){alt='new chart type error'}
+![Figure 3.11](fig/03-new_chart_error.png){alt='new chart type error'}
 
-Our years are not in order! The years are plotted in the order they appeared on our table. One simple way to solve this is to reorder our table. Select the column year. Now from the data menu select sort sheet -> Sort sheet by column F (A-Z). 
+Our years are not in order! The years are plotted in the order they appeared on our table. One simple way to solve this is to reorder our table. There are a few different tools you can use, but creating a filter for you table has a few advantages. First it automatically sets your first row as headings, this means when you sort your table the headings always stay at the top. Secondly we can order the table on the fly by simply clicking on a heading. To set this up select the entire table first. This can either be done using the keyboard shortcut of `ctrl-a` or by clicking on the upper leftmost square in your table This is the rectange above the row `1` label and to the left of the column `A` label. Next select the `Create a Filter` entry in `Data` menu. 
+
+![Figure 3.12](fig/03-new_chart_select.png){alt='new chart type select all'}
+
+You should now see downward facing triangles on each column heading. Click on the icons next to the year column and then select the Select the column year. Now from the data menu select sort sheet -> Sort sheet by column F (A-Z). 
 
 ![Figure 3.13](fig/03-new_chart_sort.png){alt='new chart type sort'}
 
 Now that our data is sorted our chart should show our data in chronological order.
+
+![Figure 3.14](fig/03-new_chart_final.png){alt='new chart type final'}
 
 :::: keypoints 
 
